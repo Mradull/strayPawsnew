@@ -24,68 +24,161 @@
         android:id="@+id/home"
         android:layout_above="@id/bottomNavigation"
         android:visibility="visible">
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/user_name"
+                android:orientation="vertical"
+                android:id="@+id/profile_banner">
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="0dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:fontFamily="@font/bungee"
+                        android:text="Hi,Sanya!"
+                        android:textColor="@color/black"
+                        android:textSize="32sp">
+
+                    </TextView>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="100dp"
+                        android:src="@drawable/sanyaa"
+                        app:civ_border_color="#FF000000"
+                        app:civ_border_width="2dp" />
+
+
+
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/bungee"
-                    android:text="Hi,Sanya!"
-                    android:textColor="@color/black"
-                    android:textSize="32sp">
+                    android:text="Welcome User"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="24sp">
 
                 </TextView>
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profile_image"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="100dp"
-                    android:src="@drawable/sanyaa"
-                    app:civ_border_color="#FF000000"
-                    app:civ_border_width="2dp" />
-
-
-
-
+                <EditText
+                    android:layout_width="360dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_height="50dp"
+                    android:hint="Find Your Pet"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textStyle="italic"
+                    android:paddingStart="20dp"
+                    android:drawableStart="@drawable/baseline_search_24"
+                    android:background="@drawable/search_background"
+                    />
             </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
+            <ScrollView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/bungee"
-                android:text="Welcome User"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/white"
-                android:textSize="24sp">
+                android:layout_marginTop="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            </TextView>
-            <EditText
-                android:layout_width="380dp"
-                android:layout_marginLeft="15dp"
-                android:layout_height="50dp"
-                android:hint="Find Your Pet"
-                android:textColor="@color/black"
-                android:textStyle="italic"
-                android:paddingStart="20dp"
-                android:drawableStart="@drawable/baseline_search_24"
-                android:background="@drawable/search_background"
-                />
+
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="150dp"
+                        android:id="@+id/dog_profile"
+                        android:layout_below="@id/profile_banner"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginBottom="32dp"
+                        android:background="@drawable/banner">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/img" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dog_profile"
+                        android:orientation="vertical"
+                        android:id="@+id/category_profile">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Categories"
+                            android:fontFamily="@font/bungee"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:layout_marginLeft="16sp"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/category"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/category_profile"
+                        android:orientation="vertical"
+                        android:id="@+id/purchase_profile">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Popular Purchase"
+                            android:fontFamily="@font/bungee"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:layout_marginLeft="16sp"/>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/popular">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
         </LinearLayout>
+
+
+
+
+
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
