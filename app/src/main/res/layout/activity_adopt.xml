@@ -107,7 +107,7 @@
                     android:paddingLeft="80dp"
                     android:text="See All"
                     android:textColor="@color/yellow"
-                    android:textSize="19dp"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
