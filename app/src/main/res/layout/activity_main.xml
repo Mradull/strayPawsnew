@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/blue2">
+    android:background="@color/white">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,32 +29,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:id="@+id/profile_banner"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/profile_banner">
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/user_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="204dp"
+                        android:layout_height="79dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginEnd="0dp"
                         android:layout_marginBottom="0dp"
                         android:fontFamily="@font/bungee"
-                        android:text="Hi,Sanya!"
-                        android:textColor="@color/black"
-                        android:textSize="32sp">
+                        android:text="Hi,Sanya! Welcome user"
+                        android:textColor="@color/yellow"
+                        android:textSize="24sp">
 
                     </TextView>
+
+
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/profile_image"
                         android:layout_width="96dp"
@@ -64,58 +68,48 @@
                         android:layout_marginStart="100dp"
                         android:src="@drawable/sanyaa"
                         app:civ_border_color="#FF000000"
-                        app:civ_border_width="2dp" />
-
-
+                        app:civ_border_width="2dp"
+                        android:layout_marginBottom="50dp"/>
 
 
                 </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/bungee"
-                    android:text="Welcome User"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/white"
-                    android:textSize="24sp">
 
-                </TextView>
-                <EditText
-                    android:layout_width="360dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_height="50dp"
-                    android:hint="Find Your Pet"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
-                    android:textStyle="italic"
-                    android:paddingStart="20dp"
-                    android:drawableStart="@drawable/baseline_search_24"
-                    android:background="@drawable/search_background"
-                    />
+
             </LinearLayout>
+
+            <EditText
+                android:layout_width="388dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/search_background"
+                android:drawableStart="@drawable/baseline_search_24"
+                android:hint="Find Your Pet"
+                android:paddingStart="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
 
-
-
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="150dp"
                         android:id="@+id/dog_profile"
+                        android:layout_width="357dp"
+                        android:layout_height="166dp"
                         android:layout_below="@id/profile_banner"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="32dp"
                         android:layout_marginLeft="32dp"
-                        android:layout_marginTop="32dp"
+                        android:layout_marginTop="25dp"
                         android:layout_marginEnd="32dp"
                         android:layout_marginRight="32dp"
                         android:layout_marginBottom="32dp"
@@ -124,23 +118,24 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/img" />
+                            android:src="@drawable/bg" />
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/category_profile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/dog_profile"
-                        android:orientation="vertical"
-                        android:id="@+id/category_profile">
+                        android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Categories"
+                            android:layout_marginLeft="16sp"
                             android:fontFamily="@font/bungee"
-                            android:textColor="@color/white"
-                            android:textSize="22sp"
-                            android:layout_marginLeft="16sp"/>
+                            android:text="Categories"
+                            android:textColor="@color/blue2"
+                            android:textSize="22sp" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/category"
@@ -151,23 +146,25 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/purchase_profile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/category_profile"
-                        android:orientation="vertical"
-                        android:id="@+id/purchase_profile">
+                        android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Popular Purchase"
+                            android:layout_marginLeft="16sp"
                             android:fontFamily="@font/bungee"
+                            android:text="Popular Purchase"
                             android:textColor="@color/white"
-                            android:textSize="22sp"
-                            android:layout_marginLeft="16sp"/>
+                            android:textSize="22sp" />
+
                         <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/popular"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:id="@+id/popular">
+                            android:layout_height="match_parent">
 
                         </androidx.recyclerview.widget.RecyclerView>
                     </LinearLayout>
